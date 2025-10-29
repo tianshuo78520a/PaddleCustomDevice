@@ -3,13 +3,6 @@ name: CI
 on:
   pull_request:
     types: [opened, synchronize]
-    branches: [develop, release/**, update-paddle-submodule-*]
-
-permissions: read-all
-
-concurrency:
-  group: ${{ github.event.pull_request.number }}-${{ github.workflow }}
-  cancel-in-progress: true
 
 env:
   PR_ID: ${{ github.event.pull_request.number }}
